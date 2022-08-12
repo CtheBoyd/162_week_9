@@ -29,6 +29,8 @@ play when the owner rolls a 6."""
 """enter home row"""
 """players end on E"""
 
+
+# game
 class LudoGame:
     """object represents the game as played."""
 
@@ -165,7 +167,7 @@ class LudoGame:
         pass
 
 
-
+#players
 
 class Player():
     """object represents the player who plays the game at a certain position"""
