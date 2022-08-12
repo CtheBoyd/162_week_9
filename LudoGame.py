@@ -175,7 +175,7 @@ class Player():
 
     def __init__(self, player_letter):
 
-        self._position = position #player "A", "B", "C", "D"
+        self._position = [] #player "A", "B", "C", "D"
         self._start_space = start_space #"H" home
         self._end_space = end_space #"E" end
         self._p_token_pos = p_token_pos  #current pos
