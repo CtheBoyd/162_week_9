@@ -38,8 +38,7 @@ class LudoGame:
     def get_player_by_position(self):
         """ takes a parameter representing the player’s position as a string and returns the player object.
         For an invalid string parameter, it will return "Player not found!"""
-        for player in self.players_list:
-            if position == player.get_position():
+        pass
 
         return "Player not found!"  # return player position as a string and the player-- token or name or Player class info?
 
