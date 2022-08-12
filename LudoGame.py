@@ -162,7 +162,7 @@ class LudoGame:
                 if player_obj.get_token_p_step_count() < 0 and player_obj.get_token_q_step_count() == -1:
                     player_obj.get_token_p_step_count(player_obj.get_token_p_step_count() + die_roll)
 
-    def play_game(self, players, turns):
+    def play_game(self, player_list, turns_list):
         """method takes two parameters, the players list, and the turns list."""
         pass
 
