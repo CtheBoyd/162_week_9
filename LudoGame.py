@@ -182,6 +182,7 @@ class Player():
         self._player_list = []
         self._player_letter = []
         self._token = ["p", "q"]
+
         if position == "A":
             self._start_space = 1
             self._end_space = 50
@@ -207,7 +208,10 @@ class Player():
         self._player_list = player_list
 
     def get_start_space(self):
-        return self._start_space
+        return "H"
+
+    def get_end_space(self):
+        return "E"
 
     def get_p_token_pos(self):
         return self._p_token_pos
@@ -284,3 +288,4 @@ class Player():
 # 28
 # [‘28’, ‘28’, ‘21’, ‘H’]
 # B5
+
