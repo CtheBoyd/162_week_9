@@ -173,7 +173,7 @@ class LudoGame:
 class Player():
     """object represents the player who plays the game at a certain position"""
 
-    def __init__(self):
+    def __init__(self, player_letter):
 
         self._position = position #player "A", "B", "C", "D"
         self._start_space = start_space #"H" home
