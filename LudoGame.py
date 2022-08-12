@@ -178,12 +178,12 @@ class Player():
         self._position = [] #player "A", "B", "C", "D"
         self._start_space = -1 #"H" home
         self._end_space = 57 #"E" end
-        self._p_token_pos = p_token_pos  #current pos
-        self._q_token_pos = q_token_pos #current pos
-        self._player_state = player_state # won and done or still playing
-        self._token_steps = token_steps  #moves
-        self._player_list = player_list
-        self._player_letter = player_letter
+        self._p_token_pos = []  #current pos
+        self._q_token_pos = [] #current pos
+        self._player_state = [] # won and done or still playing
+        self._token_steps = []  #moves
+        self._player_list = []
+        self._player_letter = []
 
         self._token = ["p", "q"]
         self._position = position
