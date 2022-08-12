@@ -26,7 +26,7 @@ class LudoGame:
     """object represents the game as played."""
 
 
-    def __init__(self,player_letter):
+    def __init__(self):
 
         self._players_list = []
         self._turns_list = []
