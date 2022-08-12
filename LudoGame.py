@@ -176,8 +176,8 @@ class Player():
     def __init__(self, player_letter):
 
         self._position = [] #player "A", "B", "C", "D"
-        self._start_space = start_space #"H" home
-        self._end_space = end_space #"E" end
+        self._start_space = -1 #"H" home
+        self._end_space = 57 #"E" end
         self._p_token_pos = p_token_pos  #current pos
         self._q_token_pos = q_token_pos #current pos
         self._player_state = player_state # won and done or still playing
