@@ -47,7 +47,7 @@ class LudoGame:
         For an invalid string parameter, it will return "Player not found!"""
         pass
 
-        return "Player not found!"
+
 
     def priority_rule(self, die_roll, player_obj):
         if die_roll == 6:
