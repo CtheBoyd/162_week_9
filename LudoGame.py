@@ -35,7 +35,7 @@ class LudoGame:
     def get_player_by_position(self):
         """ takes a parameter representing the player’s position as a string and returns the player object.
         For an invalid string parameter, it will return "Player not found!"""
-        return self._player_by_position()# return player position as a string and the player-- token or name or Player class info?
+        return self._player_by_position# return player position as a string and the player-- token or name or Player class info?
 
     def priority_rule(self, die_roll, player_obj):
         if die_roll == 6:
@@ -173,7 +173,7 @@ class LudoGame:
 class Player():
     """object represents the player who plays the game at a certain position"""
 
-    def __init__(self, position, start_space, end_space, p_token_pos, q_token_pos, player_state, token_steps, player_list, player_letter):
+    def __init__(self):
 
         self._position = position #player "A", "B", "C", "D"
         self._start_space = start_space #"H" home
