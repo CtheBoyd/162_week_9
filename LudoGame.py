@@ -22,7 +22,7 @@ play when the owner rolls a 6."""
 """enter home row"""
 """players end on E"""
 
-class LudoGame():
+class LudoGame:
     """object represents the game as played."""
     pass
 
