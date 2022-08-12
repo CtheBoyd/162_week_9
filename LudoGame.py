@@ -163,24 +163,23 @@ class LudoGame:
     def play_game(self, player_list, turns_list):
         """method takes two parameters, the players list, and the turns list."""
 
-        # for player in player_list:
-        #     player = Player(player)
-        #     self._players_list.append(player)
-        #
-        # for turns in turns_list:
-        # #    print(turns)
-        #     player_letter = turns[0]
-        #     token_steps = turns[1]
-        #     player = self.get_player_by_position(player_letter)
-        #     token = self.priority_rule(token_steps, player)
-        #     self.move_token(player, token, token_steps)
-        #
-        #     moves = []
-        #
-        #     for player_letter in self.players_list:
-        #         moves += player_letter.get_p_token_pos() + player_letter. get_q_token_pos()
-        #     print(moves)
-        pass
+        for player in player_list:
+            player = Player(player)
+            self._players_list.append(player)
+
+        for turns in turns_list:
+        #    print(turns)
+            player_letter = turns[0]
+            token_steps = turns[1]
+            player = self.get_player_by_position(player_letter)
+            token = self.priority_rule(token_steps, player)
+            self.move_token(player, token, token_steps)
+
+            moves = []
+
+            for player_letter in self.players_list:
+                moves += player_letter.get_p_token_pos() + player_letter. get_q_token_pos()
+            print(moves)
 
 
 class Player():
