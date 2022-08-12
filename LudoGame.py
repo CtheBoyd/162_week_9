@@ -30,11 +30,6 @@ class LudoGame:
 
         self._players_list = []
         self._turns_list = []
-        # self._board = board
-        self._players = players
-        self._player_by_posiiton = ()
-        # self._move_token = move_token
-        # self._play_game = play_game
 
 
     def get_player_by_position(self):
@@ -80,76 +75,78 @@ class LudoGame:
             if player_obj.get_token_p_step_count() < player_obj.get_token_q_step_count == -1:
                 return "p"
 
-    def move_token(self, player, token, die_roll):
+    def move_token(self, player_obj, token, die_roll):
         """takes three parameters, the player object, the token name (‘p’ or ‘q’) and the steps the
         token will move on the board (int)."""
 
         if die_roll == 6:
 
-            if player.get_p_token_pos() == "H" and player.get_token_p_step_count() == -1:
-                player.set_p_token_pos("R")
-                player.set_p_token_step_count(0)
+            if player_obj.get_p_token_pos() == "H" and player_obj.get_token_p_step_count() == -1:
+                player_obj.set_p_token_pos("R")
+                player_obj.set_p_token_step_count(0)
                 return
-            elif player.get_q_token_pos() == "H" and player.get_token_q_step_count() == -1:
-                player.set_q_token_pos("R")
-                player.set_q_token_step_count(0)
+            elif player_obj.get_q_token_pos() == "H" and player_obj.get_token_q_step_count() == -1:
+                player_obj.set_q_token_pos("R")
+                player_obj.set_q_token_step_count(0)
                 return
 
-        if player.get_token_p_step_count() + die_roll == 57:
-            player.set_token_p_step_count(57)
-            player.set_p_token_pos("E")
-            player.set_player_state("Finished")
+        if player_obj.get_token_p_step_count() + die_roll == 57:
+            player_obj.set_token_p_step_count(57)
+            player_obj.set_p_token_pos("E")
+            player_obj.set_player_state("Finished")
 
-        if player.get_token_q_step_count() + die_roll == 57:
-            player.set_token_q_step_count(57)
-            player.set_q_token_pos("E")
-            player.set_player_state("Finished")
+        if player_obj.get_token_q_step_count() + die_roll == 57:
+            player_obj.set_token_q_step_count(57)
+            player_obj.set_q_token_pos("E")
+            player_obj.set_player_state("Finished")
 
-        if player.get_token_p_step_count() + die_roll == 57 and player.get_token_q_step_count() == 57:
-            player.set_token_p_step_count(57)
-            player.set_p_token_pos("E")
-            player.set_player_state("Finished")
+        if player_obj.get_token_p_step_count() + die_roll == 57 and player_obj.get_token_q_step_count() == 57:
+            player_obj.set_token_p_step_count(57)
+            player_obj.set_p_token_pos("E")
+            player_obj.set_player_state("Finished")
 
         for player in self._players_list:
 
+            if player_obj == player:
+                pass
 
-        #else:
-            if player.get_space_name(player.get_token_q_step_count() + die_roll) == player.get_space_name(player.get_token_q_step_count()):
-                player.set_token_q_step_count(player.get_token_q_step_count() + die_roll)
-                player.set_token_q_step_count(0)
-                player.set_q_token_pos("H")
+            else:
+                if player_obj.get_space_name(player_obj.get_token_q_step_count() + die_roll) == player.get_space_name(player.get_token_q_step_count()):
+                    player_obj.set_token_q_step_count(player_obj.get_token_q_step_count() + die_roll)
+                    player.set_token_q_step_count(0)
+                    player.set_q_token_pos("H")
 
-            if player.get_space_name(player.get_token_p_step_count() + die_roll) == player.get_space_name(player.get_token_p_step_count()):
-                player.set_token_p_step_count(player.get_token_p_step_count() + die_roll)
-                player.set_token_p_step_count(0)
-                player.set_q_token_pos("H")
+                if player_obj.get_space_name(player_obj.get_token_p_step_count() + die_roll) == player.get_space_name(player.get_token_p_step_count()):
+                    player_obj.set_token_p_step_count(player_obj.get_token_p_step_count() + die_roll)
+                    player.set_token_p_step_count(0)
+                    player.set_q_token_pos("H")
 
-            if player.get_space_name(player.get_token_p_step_count() + die_roll) == player.get_space_name(player.get_token_q_step_count()):
-                player.set_token_q_step_count(player.get_token_p_step_count() + die_roll)
-                player.set_token_q_step_count(0)
-                player.set_q_token_pos("H")
+                if player_obj.get_space_name(player_obj.get_token_p_step_count() + die_roll) == player.get_space_name(player.get_token_q_step_count()):
+                    player_obj.set_token_q_step_count(player_obj.get_token_p_step_count() + die_roll)
+                    player.set_token_q_step_count(0)
+                    player.set_q_token_pos("H")
 
-            if player.get_space_name(player.get_token_q_step_count() + die_roll) == player.get_space_name(player.get_token_p_step_count()):
-                player.set_token_q_step_count(player.get_token_q_step_count() + die_roll)
-                player.set_token_p_step_count(0)
-                player.set_p_token_pos("H")
+                if player_obj.get_space_name(player_obj.get_token_q_step_count() + die_roll) == player.get_space_name(player.get_token_p_step_count()):
+                    player_obj.set_token_q_step_count(player_obj.get_token_q_step_count() + die_roll)
+                    player.set_token_p_step_count(0)
+                    player.set_p_token_pos("H")
 
 
         if player.get_token_p_step_count() == -1 and player.get_token_q_step_count() == -1:
             pass
 
-            if player.get_token_p_step_count() >= 0 and player.get_token_q_step_count() == -1:
-                player.get_token_p_step_count(player.get_token_p_step_count() + die_roll)
+            if player_obj.get_token_p_step_count() >= 0 and player_obj.get_token_q_step_count() == -1:
+                player_obj.get_token_p_step_count(player_obj.get_token_p_step_count() + die_roll)
 
-            if player.get_token_q_step_count() >= 0 and player.get_token_p_step_count() == -1:
-                player.get_token_q_step_count(player.get_token_q_step_count() + die_roll)
+            if player_obj.get_token_q_step_count() >= 0 and player_obj.get_token_p_step_count() == -1:
+                player_obj.get_token_q_step_count(player_obj.get_token_q_step_count() + die_roll)
 
-            if player.get_token_p_step_count() > 0 and player.get_token_q_step_count() == -1:
-                player.get_token_q_step_count(player.get_token_q_step_count() + die_roll)
+            if player.get_token_p_step_count() > 0 and player_obj.get_token_q_step_count() == -1:
+                player_obj.get_token_q_step_count(player_obj.get_token_q_step_count() + die_roll)
 
             else:
-                if player.get_token_p_step_count() < 0 and player.get_token_q_step_count() == -1:
-                    player.get_token_p_step_count(player.get_token_p_step_count() + die_roll)
+                if player_obj.get_token_p_step_count() < 0 and player_obj.get_token_q_step_count() == -1:
+                    player_obj.get_token_p_step_count(player_obj.get_token_p_step_count() + die_roll)
 
     def play_game(self, player_list, turns_list):
         """method takes two parameters, the players list, and the turns list."""
@@ -276,16 +273,16 @@ class Player():
             return str(mod)
 
 
-# players = ['A', 'B']
-# turns = [('A', 6), ('A', 4), ('A', 5), ('A', 4), ('B', 6), ('B', 4), ('B', 1), ('B', 2), ('A', 6), ('A', 4), ('A', 6), ('A', 3), ('A', 5), ('A', 1), ('A', 5), ('A', 4)]
-# game = LudoGame()
-# current_tokens_space = game.play_game(players, turns)
-# player_A = game.get_player_by_position('A')
-# print(player_A.get_completed())
-# print(player_A.get_token_p_step_count())
-# print(current_tokens_space)
-# player_B = game.get_player_by_position('B')
-# print(player_B.get_space_name(55))
+players = ['A', 'B']
+turns = [('A', 6), ('A', 4), ('A', 5), ('A', 4), ('B', 6), ('B', 4), ('B', 1), ('B', 2), ('A', 6), ('A', 4), ('A', 6), ('A', 3), ('A', 5), ('A', 1), ('A', 5), ('A', 4)]
+game = LudoGame()
+current_tokens_space = game.play_game(players, turns)
+player_A = game.get_player_by_position('A')
+print(player_A.get_completed())
+print(player_A.get_token_p_step_count())
+print(current_tokens_space)
+player_B = game.get_player_by_position('B')
+print(player_B.get_space_name(55))
 
 # And the output will be:
 # False
