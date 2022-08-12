@@ -207,7 +207,7 @@ class Player():
         return self._player_list
 
     def set_player_list(self, player_list):
-        self._player_list = player_list
+        self._player_list = player_list()
 
     def get_start_space(self):
         return "H"
@@ -222,16 +222,16 @@ class Player():
         return self._q_token_pos
 
     def set_p_token_pos(self, p_token_pos):
-        self._p_token_pos = p_token_pos
+        self._p_token_pos = p_token_pos()
 
     def set_q_token_pos(self, q_token_pos):
-        self._q_token_pos = q_token_pos
+        self._q_token_pos = q_token_pos()
 
     def get_player_state(self):
         return self._player_state
 
     def set_player_state(self, _player_state):
-        self._player_state = _player_state
+        self._player_state = _player_state()
 
     def get_completed(self):
         """takes no parameters and returns True or False if the player has finished or not finished the game"""
@@ -249,10 +249,10 @@ class Player():
         return self.get_token_q_step_count(int())
 
     def set_token_p_step_count(self, p_step_count):
-        self.set_token_p_step_count = p_step_count
+        self.set_token_p_step_count = p_step_count()
 
     def set_token_q_step_count(self, q_step_count):
-        self.set_token_q_step_count = q_step_count
+        self.set_token_q_step_count = q_step_count()
 
     def get_space_name(self, total_steps):
         """takes as a parameter the total steps of the token and returns the name of the space the token has
