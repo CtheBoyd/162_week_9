@@ -26,7 +26,7 @@ class LudoGame:
     """object represents the game as played."""
 
 
-    def __init__(self):
+    def __init__(self,player_letter):
 
         self._players_list = []
         self._turns_list = []
@@ -39,7 +39,7 @@ class LudoGame:
         """ takes a parameter representing the player’s position as a string and returns the player object.
         For an invalid string parameter, it will return "Player not found!"""
         for player in self.players_list:
-            if _position == player.get_position():
+            if position == player.get_position():
 
         return "Player not found!"  # return player position as a string and the player-- token or name or Player class info?
 
@@ -191,20 +191,20 @@ class Player():
         self._player_list = []
         self._player_letter = []
         self._token = ["p", "q"]
-        if _position == "A":
+        if position == "A":
             self._start_space = 1
             self._end_space = 50
-        if _position == "B":
+        if position == "B":
             self._start_space = 15
             self._end_space = 8
-        if _position == "C":
+        if position == "C":
             self._start_space = 29
             self._end_space = 22
-        if _position == "D":
+        if position == "D":
             self._start_space = 43
             self._end_space = 36
         else:
-            self._position = _position
+            self._position = position
 
     def get_position(self):
         return self._position
