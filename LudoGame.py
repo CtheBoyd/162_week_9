@@ -160,27 +160,10 @@ class LudoGame:
                 if player_obj.get_token_p_step_count() < 0 and player_obj.get_token_q_step_count() == -1:
                     player_obj.get_token_p_step_count(player_obj.get_token_p_step_count() + die_roll)
 
-    def play_game(self, player_list, turns_list):
+    def play_game(self, players, turns):
         """method takes two parameters, the players list, and the turns list."""
+        pass
 
-        for player in player_list:
-            player = Player(player)
-            self._players_list.append(player)
-
-        for turns in turns_list:
-        #    print(turns)
-            player_letter = turns[0]
-            token_steps = turns[1]
-            player = self.get_player_by_position(player_letter)
-            token = self.priority_rule(token_steps, player)
-            self.move_token(player, token, token_steps)
-
-            moves = []
-
-            for player_letter in self.players_list:
-                moves += player_letter.get_p_token_pos() + player_letter. get_q_token_pos()
-            print(moves)
-        return moves
 
 
 
