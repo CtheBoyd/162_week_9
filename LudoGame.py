@@ -184,9 +184,7 @@ class Player():
         self._token_steps = []  #moves
         self._player_list = []
         self._player_letter = []
-
         self._token = ["p", "q"]
-        self._position = position
         if position == "A":
             self._start_space = 1
             self._end_space = 50
