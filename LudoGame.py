@@ -31,11 +31,17 @@ class LudoGame:
         self._players_list = []
         self._turns_list = []
 
+    def add_player(self, player_obj):
+
+        self._players_list.append(player_obj)
 
     def get_player_by_position(self):
         """ takes a parameter representing the player’s position as a string and returns the player object.
         For an invalid string parameter, it will return "Player not found!"""
-        return self._player_by_position# return player position as a string and the player-- token or name or Player class info?
+        for player in self.players_list:
+            if _position == player.get_position():
+
+        return "Player not found!"  # return player position as a string and the player-- token or name or Player class info?
 
     def priority_rule(self, die_roll, player_obj):
         if die_roll == 6:
@@ -173,7 +179,7 @@ class LudoGame:
 class Player():
     """object represents the player who plays the game at a certain position"""
 
-    def __init__(self, player_letter):
+    def __init__(self):
 
         self._position = [] #player "A", "B", "C", "D"
         self._start_space = -1 #"H" home
@@ -185,20 +191,20 @@ class Player():
         self._player_list = []
         self._player_letter = []
         self._token = ["p", "q"]
-        if position == "A":
+        if _position == "A":
             self._start_space = 1
             self._end_space = 50
-        if position == "B":
+        if _position == "B":
             self._start_space = 15
             self._end_space = 8
-        if position == "C":
+        if _position == "C":
             self._start_space = 29
             self._end_space = 22
-        if position == "D":
+        if _position == "D":
             self._start_space = 43
             self._end_space = 36
         else:
-            self._position = position
+            self._position = _position
 
     def get_position(self):
         return self._position
