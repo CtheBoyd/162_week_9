@@ -24,7 +24,7 @@ play when the owner rolls a 6."""
 
 class LudoGame:
     """object represents the game as played."""
-    pass
+
 
     def __init__(self):
 
